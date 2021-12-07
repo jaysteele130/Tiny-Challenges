@@ -3,9 +3,8 @@ import uulib.ArrayUtils;
 
 public class Main {
 
-    // Challenge question 1
+    // Challenge 
     public static void countdown(int x) {
-        // complete this method
         //initialisation
         int count = 0;
         char currentLetter = ' ';
@@ -27,21 +26,19 @@ public class Main {
     }
 
     public static void question1() {
-        // COMPLETE THIS METHOD
         countdown(10);
     }
 
     // Challenge Question 2
     public static void question2() {
-        // Create an interactive program that calls the methods in the morse class to
-        // prove they work
-        // Morse.messageToMorse("the quick brown") and Morse.messageFromMorse("._ /
-        // ....") to prove they work
+        //get string input
         String msg = Console.getString("Enter String: ");
+        //string is in morse
         String morseMsg = Morse.messageToMorse(msg);
 
         System.out.println(morseMsg);
 
+        //morse back into english
         String englishMsg = Morse.messageFromMorse(morseMsg);
         System.out.println("Back to English: " + englishMsg);
 

@@ -6,30 +6,17 @@ public class Morse {
 
     // COMPLETE THIS METHOD 
     public static String messageToMorse(String msg) {
-        String morse = "";
-
-        // complete this method - see presentation
-        // convert each character in msg into a morse code and append to string morse
-        // add a space separator as long as we are not at end of message
-        
-        // i = 0
-        // WHILE i < length of string msg
-        //   get char in msg at position i
-        //   encode char into morseCode string (call charToMorseCode)
-        //   add morseCode to morse string
-        //   add a space (as long as we are not at last char in message)
-        //   i = i + 1
-        //ENDWHILE
+        String morse = ""; // intialisation
 
         char letter = ' ';
 
         for(int i = 0; i < msg.length(); i++) {
 
-            letter = msg.charAt(i);
+            letter = msg.charAt(i); //letter of morse
 
             morse += charToMorseCode(letter) ;
             if(i < msg.length() - 1) {
-                morse += " ";
+                morse += " "; //space and not adding spcae to the word
             }
         }
         
@@ -38,7 +25,6 @@ public class Morse {
 
     // ================== Decode morse string into plain text message =======================
 
-    // COMPLETE THIS METHOD
     public static String messageFromMorse(String morse) {
         // tokenizer splits morse into tokens at each space char,  as show in example below
         //            0   1  2 
@@ -48,7 +34,7 @@ public class Morse {
 
         
         while(tokenizer.hasMoreTokens()) {
-            String token = tokenizer.nextToken(); 
+            String token = tokenizer.nextToken(); //gets new token
             char tokenLetter = charFromMorseCode(token);
             msg += tokenLetter;
 
@@ -59,10 +45,6 @@ public class Morse {
         return msg; // return decoded message
     }
 
-
-    // ============================  DONT EDIT BELOW THIS LINE ==========================
-
-    // ===================== Encode and Decode Character to/from morse code =============
 
     // encode a character into its morse code
     public static String charToMorseCode(char c) {
